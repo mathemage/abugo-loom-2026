@@ -1,6 +1,6 @@
 # Loom Preparation Notes — Eliška's Marketing Analytics AI System
 
-> **Assignment:** 30-minute Loom (max 10 min recording). No code required.
+> **Assignment:** 30 minutes total time; record a Loom (max 10 min). No code required.
 > **Context:** Two weeks into the job at Abugo. Eliška is a marketing analytics colleague covering 12 countries, living in SEMrush / Google Search Console / Google Ads.
 
 ---
@@ -23,7 +23,7 @@
 
 | Question | Why I ask |
 |---|---|
-| If an AI surface flagged the French drop 6 hours earlier, what would you actually have done differently? | Tests whether speed is really the lever, or whether something else blocks action |
+| If an AI system flagged the French drop 6 hours earlier, what would you actually have done differently? | Tests whether speed is really the lever, or whether something else blocks action |
 | What's a "false alarm" in your world? If the system pings you with noise, what's the cost? | Sets the precision/recall trade-off before we build anything |
 | What does "insane search intent" mean to you — can you show me an example of a keyword you'd call that? | Calibrates vocabulary so we build to her mental model, not ours |
 | Have you tried anything with AI already — ChatGPT, SEMrush AI features, anything? What worked and what didn't? | Avoids rebuilding something she already dismissed; finds real gaps |
