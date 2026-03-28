@@ -52,7 +52,7 @@
 
 | Question | Why I ask |
 |---|---|
-| Is there a company-wide agent framework or internal SDK I should build on top of? | Avoids NIH; aligns with existing patterns |
+| Is there a company-wide agent framework or internal SDK I should build on top of? | Avoids "Not Invented Here" (NIH) syndrome; aligns with existing patterns |
 | What's the approved LLM provider and model tier — OpenAI GPT-4o, Claude, self-hosted? | Affects latency, cost, and data-residency constraints immediately |
 | Are there existing connectors for SEMrush / GSC / Google Ads, or do I build them from scratch? | Biggest time sink in week one if missing |
 | What does the standard logging / observability stack look like (Datadog, Grafana, custom)? | Can't bolt logging on later; need to know from day one |
@@ -72,7 +72,8 @@
 │                  MARKETING INTELLIGENCE AGENT                        │
 │                                                                       │
 │  TRIGGERS (Scheduled + Event-Driven)                                 │
-│  ├── Daily 07:00 CET: pull overnight data from GSC + SEMrush         │
+│  ├── Daily 07:00 Europe/Prague time: pull overnight data from GSC +  │
+│  │   SEMrush                                                          │
 │  ├── Hourly: watch Google Ads spend anomaly threshold                │
 │  └── Ad hoc: Eliška can type "check France" in Slack                │
 │                                                                       │
@@ -145,7 +146,8 @@ Data collection, anomaly detection, draft generation, and notification delivery.
 
 **Logging:**
 - Structured JSON logs (stdout) with `run_id`, `country`, `trigger`, `step`, `duration_ms`, `llm_tokens_used`
-- Every LLM call logged with prompt hash + response (no PII) for replay
+- By default, log only LLM call metadata and prompt/response hashes (no raw content)
+- If full prompts/responses are ever logged, store them in a secured location with redaction of sensitive data, strict access controls, and short retention limits
 - Alert if a country's data fetch fails — Eliška should know the digest is incomplete
 
 **Error handling:**
